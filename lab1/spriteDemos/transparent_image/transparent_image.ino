@@ -25,8 +25,10 @@ void setup()
 int x_pos = 0;
 
 void loop() {
+  int index = random(sizeof(colors)) / sizeof(colors[0]) ;
+
   // Draw the icons
-  bkg.fillSprite(TFT_BLUE);
+  bkg.fillSprite(colors[index]);
   spr.pushImage(0, 0, shibaWidth, shibaHeight, shiba);
   spr.pushToSprite(&bkg, x_pos, tft.height()/2 - shibaHeight/2, TFT_BLACK);
   bkg.pushSprite(0, 0);
